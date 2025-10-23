@@ -1,0 +1,22 @@
+
+body {
+    background: linear-gradient(to bottom, #ffffff 0%, #000000 100%);
+}
+
+div > #lohann {
+    background-image: url("images/pingu1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main > div {
+  height: 100vh;        /* Occupe toute la hauteur de la fenêtre */
+  width: 100vw;         /* Occupe toute la largeur */
+  display: flex;        /* Centre le contenu */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
