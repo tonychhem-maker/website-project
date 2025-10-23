@@ -3,6 +3,9 @@
     <head>
         <title>SuperDuperSiteWeb</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
@@ -11,42 +14,68 @@
                 <h1>Le meilleur site pour apprendre !</h1>
                 <p>100% des apprentisseur le recommande !!!</p>
                 <nav>
-                    ici les lien
+                    <a href="#p1">Les debuts de l'informatique</a>
+                    <a href="#p2">L'emergence des reseaux</a>
+                    <a href="#p3">L'ere du Web</a>
+                    <a href="#p4">L'Intelligence artificielle</a>
+                    <a href="#p5">Le quizo quiz</a>
                 </nav>
             </header>
             <!--Les sections du site : les differentes parties-->
-            <div>
-                <h1>HUUUUUUUUUAAAAAAAA</h1>
+            <div id="home-page">
+                <h1>Les portes du savoir s'ouvre à vous !<br>L'histoire du Web en 4 grandes parties</h1>
+                <ol>
+                    <li>Les debuts de l'informatique avec Alan Turing</li>
+                    <li>L'emergence des reseaux avec Arpanet</li>
+                    <li>L'ere du Web avec l'emergence de l'open source</li>
+                    <li>L'Intelligence artificielle avec Sam Altman</li>
+                </ol>
+                <p>Et ensuite.....</p>
+                <br><br>
+                <h1 id="quizo">LE QUIZO QUIZ</h1>
             </div>
             <!--Les article qui raconte le petit résumé des grande parties-->
-            <div>
-                <h2 class="section-title">Les supers trucs à apprendre !!</h2>
-                <h4 class="article-title">La partie qui raconte des trucs</h4>
-                <p>Ce titre à beaucoup de chose à raconter !</p>
+            <div id="p1">
+                <article>
+                    <h2 class="section-title">Les debuts de l'informatique</h2>
+                    <h4 class="article-title">Alan Turing</h4>
+                    <p>Inventeur de la machine bombe</p>
+                </article>
+            </div> 
+            <div id="p2">
+                <article>
+                    <h2 class="section-title">L'emergence des reseaux</h2>
+                    <h4 class="article-title">Arpanet</h4>
+                    <p>Le premier résaux (je crois) </p>
+                </article>
             </div>
-            <div>
-                <h4 class="article-title">La partie qui raconte des trucs</h4>
-                <p>Ce titre à beaucoup de chose à raconter !</p>
+            <div id="p3">
+                <article>
+                    <h2 class="section-title">L'ere du Web</h2>
+                    <h4 class="article-title">L'emergence de l'open source</h4>
+                    <p>Linus Torvalds createur de Linux et Git</p>
+                </article>
             </div>
-            <div id="lohann">
-                <h4 class="article-title">La partie qui raconte des trucs</h4>
-                <p>Ce titre à beaucoup de chose à raconter !</p>
+            <div id="p4">
+                <article>
+                    <h2 class="section-title">L'Intelligence artificielle</h2>
+                    <h4 class="article-title">Sam Altman</h4>
+                    <p>Fondateur de (plus si open que ça) IA</p>
+                </article>
             </div>
-            <div>
-                <h4 class="article-title">La partie qui raconte des trucs</h4>
-                <p>Ce titre à beaucoup de chose à raconter !</p>
-            </div>
-            <div>
+            <div id="p5">
                 <h2 class="section-title">Le quiz !</h2>
                 la partie quiz
             </div>
         </main>
         <!--Mention-->
-        <footer>
+        <footer id="fin">
+            <img src="images/planette.png" alt="icone">
             <ul>
                 <li>Tout droit réserver à Lohann Coant--Verdier</li>
                 <li>Ce réferer à la convetion de genève</li>
             </ul>
         </footer>
+    <script src="index.js"></script>
     </body>
 </html>

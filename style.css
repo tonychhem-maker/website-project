@@ -1,22 +1,186 @@
+/* Permet que lorsque les liens itrasite sont cliqué il y ai un mouvement */
+html {
+  scroll-behavior: smooth;
+  letter-spacing: 3px;
+}
 
+/* Le font trouvé sur google font */
 body {
-    background: linear-gradient(to bottom, #ffffff 0%, #000000 100%);
+  font-family: 'BBH Sans Bartle', 'Montserrat', 'Arial', sans-serif;
+  background: linear-gradient(120deg, #141e30 0%, #243b55 100%);
+  margin: 0;
+  color: #F6F6F6;
 }
 
-div > #lohann {
-    background-image: url("images/pingu1.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+/* Le h1 avec un beau dégrader dans les lettres */
+header h1 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+  font-family: 'BBH Sans Bartle', 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  background: linear-gradient(90deg,#fff 20%,#2193b0 70%,#6dd5ed 100%);
+  -webkit-background-clip: text; /* les deux vont ensembl, celui si permet de faire clip le background (on voit donc le background du body) */
+  -webkit-text-fill-color: transparent; /* et celui ci permet de rendre la couleur du texte transparante (on voit donc la couleur du background) */
 }
 
-main > div {
-  height: 100vh;        /* Occupe toute la hauteur de la fenêtre */
-  width: 100vw;         /* Occupe toute la largeur */
-  display: flex;        /* Centre le contenu */
-  flex-direction: column;
+
+header p {
+  font-size: 1.5rem;
+  color: #b1eaff;
+  font-weight: 600;
+  margin-bottom: 2em;
+}
+/* Partie sur les icones de navigations */
+nav {
+  display: flex;
+  gap: 2em;
   justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+  margin-bottom: 2em;
+}
+
+nav a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.5em 1.2em;
+  border-radius: 45px;
+  color: #fff;
+  background: rgba(33,147,176,0.12);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+nav a:hover {
+  background: linear-gradient(90deg,#2193b0,#6dd5ed);
+  color: #0e2431;
+  box-shadow: 0 4px 20px #2193b033;
+  transform: scale(1.12);
+}
+
+/* Prend les div dans le main et spécifiquement ceux qui ont un id avec "p" */
+main > div,
+div[id^="p"] {
+  min-height: 100vh;
+  padding: 6em 8vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 32px;
+  background: rgba(20,30,48,0.6);
+  box-shadow: 0 8px 64px 0 #2193b033;
+  margin-bottom: 3em;
+  position: relative;
+}
+
+#home-page {
+  min-height: 35vh;
+}
+
+/* Titre de partie */
+.section-title, h2 {
+  font-size: 3.2rem;
+  font-family: 'BBH Sans Bartle', 'Montserrat', sans-serif;
+  color: #fff;
+  margin-bottom: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Sous-titre d'article */
+.article-title, h4 {
+  font-size: 1.6rem;
+  color: #6dd5ed;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+article {
+  font-family: 'BBH Sans Bartle', 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  background: rgba(33, 147, 176, 0.09);
+  border-radius: 18px;
+  box-shadow: 0 0 32px #6dd5ed22;
+  padding: 2em;
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 2em 0;
+  color: #2193b0;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer li {
+  font-size: 1.1rem;
+  margin-bottom: 0.7em;
+  font-weight: 400;
+}
+
+div > ol {
+  position: relative;
+  left: 5rem;
+}
+/* Partie pour le boutons quizo quiz */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes rainbow-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+#quizo {
+  margin: 0;
+  font-size: 5rem;
+  text-align: center;
+  background: rgba(33,147,176,0.12);
+  border-radius: 45px;
+}
+/*
+background-clip: text et -webkit-background-clip: text permet de mettre le degrader arc en ciel sur le text
+color: transparent et -webkit-text-fill-color: transparent cache la couleur normal du texte pour que le degrader puisse etre afficher
+*/
+#quizo:hover {
+  animation: shake 0.4s infinite;
+  background: linear-gradient(90deg,#2193b0,#6dd5ed);
+  color: transparent;
+  background-image: linear-gradient(270deg, #ff3cac, #784ba0, #47e5bc, #fff720, #ff3cac);
+  background-size: 800% 800%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 0 4px 20px #2193b033;
+  animation-name: shake, rainbow-text;
+  animation-duration: 0.4s, 2s;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: linear, linear;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  .section-title, h2 {
+    font-size: 2rem;
+  }
+  main > div, div[id^="p"] {
+    padding: 2em 4vw;
+  }
+  nav {
+    gap: 1em;
+    flex-wrap: wrap;
+  }
 }
