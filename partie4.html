@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frise OpenAI - Sam Altman</title>
-  <link rel="stylesheet" href="assets/nicomoji/NicoMoji-Regular.ttf">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Ajustements CSS */
+ 
     .header {
       padding: 15px 10px;
       height: auto;
@@ -56,7 +55,6 @@
       margin: 0;
     }
 
-    /* Styles uniquement pour le carousel */
     .carousel {
       position: relative;
       width: 100%;
@@ -163,9 +161,9 @@
 
   <section class="carousel">
     <div class="carousel-track">
-      <img src="assets/photo3.jpg" alt="Image 1">
-      <img src="assets/photo1.jpg" alt="Image 2">
-      <img src="assets/photo2.jpg" alt="Image 3">
+      <img src="images_p4/photo3.jpg" alt="Image 1">
+      <img src="images_p4/photo1.jpg" alt="Image 2">
+      <img src="images_p4/photo2.jpg" alt="Image 3">
     </div>
     <button class="carousel-btn carousel-prev">‹</button>
     <button class="carousel-btn carousel-next">›</button>
@@ -201,7 +199,7 @@
   </section>
 
   <script>
-    // Scroll vers la timeline au clic sur le bouton
+  
     document.getElementById('discover-btn').addEventListener('click', () => {
       document.getElementById('timeline-section').scrollIntoView({ 
         behavior: 'smooth',
@@ -209,7 +207,7 @@
       });
     });
 
-    // Nouveau carousel avec navigation
+
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.carousel-prev');
     const nextBtn = document.querySelector('.carousel-next');
@@ -245,7 +243,7 @@
       });
     });
 
-    // Défilement automatique
+
     let autoSlide = setInterval(nextSlide, 4000);
 
     document.querySelector('.carousel').addEventListener('mouseenter', () => {
@@ -256,7 +254,7 @@
       autoSlide = setInterval(nextSlide, 4000);
     });
 
-    // Animation de la flèche
+
     const arrow = document.querySelector('.arrow');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
