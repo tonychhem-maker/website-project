@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frise OpenAI - Sam Altman</title>
+  <link rel="stylesheet" href="assets/nicomoji/NicoMoji-Regular.ttf">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Ajustements CSS */
+    .header {
+      padding: 15px 10px;
+      height: auto;
+    }
+    
+    .logo {
+      height: 80px;
+    }
+
+    .arrow {
+      clip-path: polygon(0 22%, 75% 22%, 75% 1%, 100% 52%, 75% 100%, 75% 78%, 0 78%);
+      height: 200px;
+    }
+
+    .year {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .year.start { 
+      left: 10%; 
+      transform: translate(-50%, -50%);
+    }
+    
+    .year.mid { 
+      left: 50%; 
+      transform: translate(-50%, -50%);
+    }
+    
+    .year.end { 
+      right: 10%; 
+      transform: translate(50%, -50%);
+    }
+
+    .timeline-text {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 80px;
+      max-width: 1200px;
+      text-align: justify;
+    }
+
+    .timeline-text p {
+      margin: 0;
+    }
+
+    /* Styles uniquement pour le carousel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel img {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      z-index: 10;
+      color: #333;
+    }
+
+    .carousel-btn:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-prev {
+      left: 20px;
+    }
+
+    .carousel-next {
+      right: 20px;
+    }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: white;
+      width: 30px;
+      border-radius: 6px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="https://openai.com" target="_blank">
+      <img src="assets/openai-ai.png" alt="Logo OpenAI" class="logo">
+    </a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Sam Altman</h2>
+      <h1>L'IA à l'œuvre<br>du Grand Public</h1>
+      <p>
+        L'intelligence artificielle façonne le monde de demain. Portée par des visionnaires comme Sam Altman, 
+        elle repousse les limites de la créativité, de la performance et de l'innovation pour transformer notre quotidien.
+      </p>
+      <button class="cta" id="discover-btn">Découvrez son histoire</button>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <div class="carousel-track">
+      <img src="assets/photo3.jpg" alt="Image 1">
+      <img src="assets/photo1.jpg" alt="Image 2">
+      <img src="assets/photo2.jpg" alt="Image 3">
+    </div>
+    <button class="carousel-btn carousel-prev">‹</button>
+    <button class="carousel-btn carousel-next">›</button>
+    <div class="carousel-dots">
+      <button class="carousel-dot active" data-slide="0"></button>
+      <button class="carousel-dot" data-slide="1"></button>
+      <button class="carousel-dot" data-slide="2"></button>
+    </div>
+  </section>
+
+  <section class="timeline" id="timeline-section">
+    <h2>Frise Chronologique</h2>
+    <div class="arrow-container">
+      <div class="arrow">
+        <div class="year start">2020</div>
+        <div class="year mid">2022</div>
+        <div class="year end">2025</div>
+      </div>
+    </div>
+    <div class="timeline-text">
+      <p>
+        En 2020, Sam Altman devient le PDG d'OpenAI, une organisation dédiée à la recherche en intelligence artificielle. Sous sa direction, OpenAI se concentre sur le développement de modèles d'IA avancés et accessibles, visant à démocratiser l'accès à cette technologie. Altman met l'accent sur la sécurité et l'éthique de l'IA, tout en encourageant l'innovation rapide. Cette période marque le passage de l'IA expérimentale à une technologie accessible et grand public.
+      </p>
+      <p>
+        En 2022, OpenAI lance GPT-3, un modèle de langage révolutionnaire capable de générer du texte cohérent et contextuel. GPT-3 attire l'attention mondiale pour ses capacités impressionnantes, ouvrant la voie à une multitude d'applications dans divers domaines, de la rédaction automatisée à la programmation assistée. Cette avancée technologique souligne le potentiel de l'IA à transformer les interactions humaines avec les machines, tout en posant des questions cruciales sur l'éthique et l'impact sociétal de ces technologies.
+      </p>
+      <p>
+        En 2025, sous la direction de Sam Altman, OpenAI continue d'innover avec le lancement de GPT-5, un modèle d'IA encore plus avancé. GPT-5 intègre des capacités multimodales, permettant une interaction fluide entre le texte, les images et la vidéo. Cette évolution marque une étape significative dans l'intégration de l'IA dans la vie quotidienne, facilitant des applications allant de l'éducation personnalisée à la création artistique assistée par IA. Altman insiste sur l'importance de réguler l'IA pour garantir qu'elle soit utilisée de manière responsable et bénéfique pour l'humanité.
+      </p>
+    </div>
+    <h3>Globalement</h3>
+    <p>globalement, depuis les années 2020 le monde n'a fait que d'avancer en termes de technologies, depuis le lancement de chatgpt en 2020, les IA n'ont cessé de ce développer au seins du grand public. Hors OpenAI, de nombreux avancés on été fait, les IA sont maintenant capables de réaliser des tâches plus complexes (créations de vidéos, document et autres...etc). Aujourd'hui l'IA est capables de produire des vidéos d'un réalisme déconcertant notamment avec l'arrivé de Sora 2 ou encore Veo 3, mais ce n'est pas tout, elfes sont capables d'assister dans le quotidien avec la création d'agent permettant l'automatisation de tâches. En somme les IA ne font que de se développer et sont loin de s'arrêter !</p>
+  </section>
+
+  <script>
+    // Scroll vers la timeline au clic sur le bouton
+    document.getElementById('discover-btn').addEventListener('click', () => {
+      document.getElementById('timeline-section').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+
+    // Nouveau carousel avec navigation
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    let index = 0;
+    const totalSlides = 3;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      index = (index + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        index = parseInt(dot.dataset.slide);
+        updateCarousel();
+      });
+    });
+
+    // Défilement automatique
+    let autoSlide = setInterval(nextSlide, 4000);
+
+    document.querySelector('.carousel').addEventListener('mouseenter', () => {
+      clearInterval(autoSlide);
+    });
+
+    document.querySelector('.carousel').addEventListener('mouseleave', () => {
+      autoSlide = setInterval(nextSlide, 4000);
+    });
+
+    // Animation de la flèche
+    const arrow = document.querySelector('.arrow');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          arrow.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(arrow);
+  </script>
+</body>
+</html>
